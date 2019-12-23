@@ -42,8 +42,8 @@ DEFAULT_REQUEST_HEADERS = {
     "Accept-Language": "zh-CN,zh;q=0.8,zh-TW;q=0.6,en;q=0.4",
     "Cache-Control": "max-age=0",
     "Connection": "keep-alive",
-    "Host": "www.tianyancha.com",
-    "Referer": "http://www.tianyancha.com/company/240297366",
+    "Host": "www.tianXXXX.com",
+    "Referer": "http://www.tianXXXX.com/company/240297366",
     "Tyc-From": "normal",
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36"
 }
