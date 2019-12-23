@@ -15,8 +15,8 @@ from scrapy.http.request import Request
 
 class TianyanchaSpider(scrapy.Spider):
     name = "user_info"
-    allowed_domains = ["www.tianyancha.com"]
-    start_urls = ['http://www.tianyancha.com']
+    allowed_domains = ["www.tianXXXX.com"]
+    start_urls = ['http://www.tianXXXX.com']
     company_name = ''
 
     def __init__(self, company_name, *args, **kwargs):
@@ -24,7 +24,7 @@ class TianyanchaSpider(scrapy.Spider):
         self.company_name = company_name
 
     def parse(self, response):
-        url = "http://www.tianyancha.com/search/%s.json" % (urllib.quote(self.company_name),)
+        url = "http://www.tianXXXX.com/search/%s.json" % (urllib.quote(self.company_name),)
         yield Request(url, callback=self.parse_page)
 
     def parse_page(self, response):
@@ -32,13 +32,13 @@ class TianyanchaSpider(scrapy.Spider):
         total = int(response_content['totalPage']) if response_content['totalPage'] else 0
         i = 1
         while i <= total:
-            yield Request("http://www.tianyancha.com/search/%s.json?pn=%s" % (urllib.quote(self.company_name), i), callback=self.parse_id)
+            yield Request("http://www.tianXXXX.com/search/%s.json?pn=%s" % (urllib.quote(self.company_name), i), callback=self.parse_id)
             i += 1
 
     def parse_id(self, response):
         response_content = json.loads(response.body)
         for data in response_content['data']:
-            yield Request("http://www.tianyancha.com/company/%s.json" % (data['id'],), callback=self.parse_info)
+            yield Request("http://www.tianXXXX.com/company/%s.json" % (data['id'],), callback=self.parse_info)
 
     def parse_info(self, response):
         response_content = json.loads(response.body)
